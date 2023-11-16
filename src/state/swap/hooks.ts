@@ -5,7 +5,6 @@ import {
   Currency,
   CurrencyAmount,
   Percent,
-  SUSHI_ADDRESS,
   Trade as V2Trade,
   TradeType,
   WNATIVE_ADDRESS,
@@ -50,7 +49,7 @@ export function useSwapActionHandlers(): {
   const dispatch = useAppDispatch()
   const { chainId } = useActiveWeb3React()
   const router = useRouter()
-  
+  const SUSHI_ADDRESS = '0x0eE4024E8d5ae9afFCe26f692028407dD2050B7D'
 
   const inputCurrencyId = router.query.inputCurrency || 'ETH'
   const outputCurrencyId =
