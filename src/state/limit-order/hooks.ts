@@ -7,6 +7,7 @@ import {
   JSBI,
   Price,
   SUSHI_ADDRESS,
+  USDC_ADDRESS,
   Trade,
   TradeType,
   WNATIVE_ADDRESS,
@@ -125,10 +126,10 @@ export function queryParametersToSwapState(chainId: ChainId, parsedQs: ParsedQs)
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   const eth = chainId === ChainId.CELO ? WNATIVE_ADDRESS[chainId] : 'ETH'
-  const sushi = SUSHI_ADDRESS[chainId]
+  const sushi = USDC_ADDRESS[chainId]
   if (inputCurrency === '' && outputCurrency === '') {
-    inputCurrency = 
-    outputCurrency = 
+    inputCurrency = eth
+    outputCurrency = sushi
   } else if (inputCurrency === '') {
     inputCurrency = outputCurrency === eth ? sushi : eth
   } else if (outputCurrency === '' || inputCurrency === outputCurrency) {
