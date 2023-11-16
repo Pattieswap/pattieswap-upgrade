@@ -135,7 +135,7 @@ const WalletModal: FC<WalletModal> = ({ pendingTransactions, confirmedTransactio
                 console.debug('Provider is wallet connect, attempt network switch')
                 switchToNetwork({
                   provider,
-                  chainId: defaultChainId !== 1 || !queryChainId ? defaultChainId : queryChainId,
+                  chainId: defaultChainId !== 56 || !queryChainId ? defaultChainId : queryChainId,
                 })
               }
             }
