@@ -5,11 +5,7 @@ import { Field } from './actions'
 import { queryParametersToSwapState } from './hooks'
 
 describe('hooks', () => {
-  const pattieAddress = '0x0ee4024e8d5ae9affce26f692028407dd2050b7d';
-const SUSHI_ADDRESS = {
-  [ChainId.ETHEREUM]: pattieAddress,
-  [ChainId.BSC]: pattieAddress,
-};
+  const sushiAddress = SUSHI_ADDRESS[ChainId.ETHEREUM]
 
   describe('#queryParametersToSwapState', () => {
     test('ETH to DAI', () => {
