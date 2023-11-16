@@ -319,14 +319,13 @@ export function queryParametersToSwapState(parsedQs: ParsedQs, chainId: ChainId 
   const eth = chainId === ChainId.CELO ? WNATIVE_ADDRESS[chainId] : 'ETH'
   const sushi = chainId === ChainId.BOBA_AVAX ? '0x4200000000000000000000000000000000000023' : SUSHI_ADDRESS[chainId]
   if (inputCurrency === '' && outputCurrency === '') {
-    inputCurrency = 'eth';
-    outputCurrency = '0x0eE4024E8d5ae9afFCe26f692028407dD2050B7D';
-} else if (inputCurrency === '') {
-    inputCurrency = outputCurrency === 'eth' ? '0x0eE4024E8d5ae9afFCe26f692028407dD2050B7D' : 'eth';
-} else if (outputCurrency === '' || inputCurrency === outputCurrency) {
-    outputCurrency = inputCurrency === 'eth' ? '0x0eE4024E8d5ae9afFCe26f692028407dD2050B7D' : 'eth';
-}
-}
+    inputCurrency = eth
+    outputCurrency = sushi
+  } else if (inputCurrency === '') {
+    inputCurrency = outputCurrency === eth ? sushi : eth
+  } else if (outputCurrency === '' || inputCurrency === outputCurrency) {
+    outputCurrency = inputCurrency === eth ? sushi : eth
+  }
 
   const recipient = validatedRecipient(parsedQs.recipient)
 
