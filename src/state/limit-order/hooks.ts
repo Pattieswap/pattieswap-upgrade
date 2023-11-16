@@ -127,8 +127,8 @@ export function queryParametersToSwapState(chainId: ChainId, parsedQs: ParsedQs)
   const eth = chainId === ChainId.CELO ? WNATIVE_ADDRESS[chainId] : 'ETH'
   const sushi = SUSHI_ADDRESS[chainId]
   if (inputCurrency === '' && outputCurrency === '') {
-    inputCurrency = eth
-    outputCurrency = sushi
+    inputCurrency = 
+    outputCurrency = 
   } else if (inputCurrency === '') {
     inputCurrency = outputCurrency === eth ? sushi : eth
   } else if (outputCurrency === '' || inputCurrency === outputCurrency) {
