@@ -317,15 +317,15 @@ export function queryParametersToSwapState(parsedQs: ParsedQs, chainId: ChainId 
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   const eth = chainId === ChainId.CELO ? WNATIVE_ADDRESS[chainId] : 'ETH'
-  const pattieAddress = '0x0eE4024E8d5ae9afFCe26f692028407dD2050B7D'
-  const sushi = chainId === ChainId.BOBA_AVAX ? '0x4200000000000000000000000000000000000023' : pattieAddress[chainId]
+  const pattie = '0x0eE4024E8d5ae9afFCe26f692028407dD2050B7D'
+  const sushi = chainId === ChainId.BOBA_AVAX ? '0x4200000000000000000000000000000000000023' : SUSHI_ADDRESS[chainId]
   if (inputCurrency === '' && outputCurrency === '') {
     inputCurrency = eth
-    outputCurrency = sushi
+    outputCurrency = pattie
   } else if (inputCurrency === '') {
-    inputCurrency = outputCurrency === eth ? sushi : eth
+    inputCurrency = outputCurrency === eth ? pattie : eth
   } else if (outputCurrency === '' || inputCurrency === outputCurrency) {
-    outputCurrency = inputCurrency === eth ? sushi : eth
+    outputCurrency = inputCurrency === eth ? pattie : eth
   }
 
   const recipient = validatedRecipient(parsedQs.recipient)
