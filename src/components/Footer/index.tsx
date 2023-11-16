@@ -84,7 +84,7 @@ const Footer = () => {
             </Typography>
             <a href="https://pattieswap.finance" target="_blank" rel="noreferrer">
               <Typography variant="xs" className="text-low-emphesis hover:text-high-emphesis">
-                {i18n._(t`What is Sushi?`)}
+                {i18n._(t`What is Pattie?`)}
               </Typography>
             </a>
             <a href="https://t.me/Pattiswapchat" target="_blank" rel="noreferrer">
