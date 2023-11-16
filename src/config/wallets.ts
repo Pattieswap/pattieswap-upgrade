@@ -72,7 +72,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     name: 'MetaMask',
     iconName: 'metamask.png',
     description: 'Open in MetaMask app.',
-    href: 'https://metamask.app.link/dapp/app.sushi.com',
+    href: 'https://metamask.app.link/dapp/pattieswap.finance',
     color: '#E8831D',
     mobile: true,
     mobileOnly: true,
@@ -130,8 +130,8 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
       const WalletLinkConnector = (await import('web3-react-walletlink-connector')).WalletLinkConnector
       return new WalletLinkConnector({
         url: RPC[ChainId.ETHEREUM],
-        appName: 'SushiSwap',
-        appLogoUrl: 'https://raw.githubusercontent.com/sushiswap/art/master/sushi/logo-256x256.png',
+        appName: 'PattieSwap',
+        appLogoUrl: 'https://raw.githubusercontent.com/Pattieswap/assets/main/logo.png',
         darkMode: true,
       })
     },
