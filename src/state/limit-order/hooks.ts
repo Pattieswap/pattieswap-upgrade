@@ -126,13 +126,14 @@ export function queryParametersToSwapState(chainId: ChainId, parsedQs: ParsedQs)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   const eth = chainId === ChainId.CELO ? WNATIVE_ADDRESS[chainId] : 'ETH'
   const sushi = SUSHI_ADDRESS[chainId]
+  const pattie = '0x0ee4024e8d5ae9affce26f692028407dd2050b7d'
   if (inputCurrency === '' && outputCurrency === '') {
     inputCurrency = eth
-    outputCurrency = sushi
+    outputCurrency = pattie
   } else if (inputCurrency === '') {
-    inputCurrency = outputCurrency === eth ? sushi : eth
+    inputCurrency = outputCurrency === eth ? pattie : eth
   } else if (outputCurrency === '' || inputCurrency === outputCurrency) {
-    outputCurrency = inputCurrency === eth ? sushi : eth
+    outputCurrency = inputCurrency === eth ? pattie : eth
   }
 
   return {
