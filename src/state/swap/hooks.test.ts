@@ -5,7 +5,12 @@ import { Field } from './actions'
 import { queryParametersToSwapState } from './hooks'
 
 describe('hooks', () => {
-  const sushiAddress = SUSHI_ADDRESS[ChainId.ETHEREUM]
+  const pattieAddress = '0x0ee4024e8d5ae9affce26f692028407dd2050b7d';
+const SUSHI_ADDRESS = {
+  [ChainId.ETHEREUM]: pattieAddress,
+  [ChainId.BSC]: pattieAddress,
+};
+
   describe('#queryParametersToSwapState', () => {
     test('ETH to DAI', () => {
       expect(
@@ -52,7 +57,7 @@ describe('hooks', () => {
           })
         )
       ).toEqual({
-        [Field.OUTPUT]: { currencyId: 'ETH' },
+        [Field.OUTPUT]: { currencyId: 'BNB' },
         [Field.INPUT]: { currencyId: sushiAddress },
         typedValue: '20.5',
         independentField: Field.INPUT,
